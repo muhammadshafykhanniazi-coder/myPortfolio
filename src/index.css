@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-bg text-ink font-sans antialiased;
+  background-image:
+    radial-gradient(60% 50% at 15% 10%, rgba(124, 92, 255, 0.14), transparent 60%),
+    radial-gradient(45% 40% at 85% 0%, rgba(56, 189, 248, 0.10), transparent 60%),
+    radial-gradient(40% 40% at 50% 100%, rgba(52, 211, 153, 0.08), transparent 60%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(124, 92, 255, 0.35);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #05060a;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+:focus-visible {
+  outline: 2px solid #7c5cff;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.section {
+  @apply mx-auto w-full max-w-6xl px-6 py-24 sm:px-8;
+}
+
+.card {
+  @apply rounded-xl2 border border-stroke bg-bg-surface/60 backdrop-blur-sm shadow-card;
+}
+
+.eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.2em] text-accent;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-stroke px-5 py-2.5 text-sm font-medium text-ink transition-all hover:border-stroke-strong hover:bg-white/5 active:scale-[0.98];
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition-all hover:brightness-110 active:scale-[0.98];
+}
+
+.field {
+  @apply w-full rounded-lg border border-stroke bg-bg-elevated px-4 py-2.5 text-sm text-ink placeholder:text-ink-soft outline-none transition-colors focus:border-accent;
+}
